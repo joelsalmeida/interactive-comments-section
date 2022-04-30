@@ -8,11 +8,11 @@ module.exports = {
         references: { model: 'Users', key: 'id' }
       },
       replyingToUser: {
-        field: 'replying_to_user', type: Sequelize.INTEGER, allowNull: false,
+        field: 'replies_to_user', type: Sequelize.INTEGER, allowNull: false,
         references: { model: 'Users', key: 'id' }
       },
       replyingToComment: {
-        field: 'replying_to_comment', type: Sequelize.INTEGER, allowNull: false,
+        field: 'replies_to_comment', type: Sequelize.INTEGER, allowNull: false,
         references: { model: 'Comments', key: 'id' }
       },
       content: { type: Sequelize.STRING, allowNull: false },
