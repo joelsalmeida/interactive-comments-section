@@ -8,7 +8,7 @@ const comment = (sequelize, DataTypes) => {
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
-    score: { type: DataTypes.INTEGER, allowNull: false },
+    score: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
   }, { tableName: 'Comments', underscored: true, timestamps: false });
 
   Comment.associate = (models) => {
