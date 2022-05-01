@@ -1,4 +1,4 @@
-const { Comment } = require('../models');
+const { Comment, User } = require('../models');
 
 const create = async (userId, content) => {
   try {
@@ -8,4 +8,12 @@ const create = async (userId, content) => {
   }
 };
 
-module.exports = { create };
+const get = async () => {
+  try {
+    return await Comment.findAll({ include: [{ model: User, as: 'user' }] });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { create, get };
