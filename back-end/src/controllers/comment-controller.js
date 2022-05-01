@@ -11,4 +11,13 @@ const create = async (req, res) => {
   }
 };
 
-module.exports = { create };
+const get = async (_req, res) => {
+  try {
+    const comments = await service.get();
+    return res.status(200).json(comments);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { create, get };
