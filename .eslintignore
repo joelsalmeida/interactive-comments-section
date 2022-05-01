@@ -1,3 +1,8 @@
+# back-end folders
 **/migrations/
 **/seeders/
-**/models/index.js
+**/models/
+
+# front-end folders
+**/front-end/src/index.jsx
+**/front-end/src/reportWebVitals.js
