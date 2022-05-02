@@ -1,0 +1,12 @@
+@use '../../scss/colors' as *;
+
+.rate-button {
+  background-color: $very-light-gray;
+  color: $moderate-blue;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  font-weight: 500;
+  border-radius: 7px;
+}
