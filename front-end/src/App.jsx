@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
+import Comment from './components/comment/Comment';
+import getByEndpoint from './helpers/getByEndpoint';
 
 function App() {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    getByEndpoint('comment').then((data) => setComments(data));
+  }, [comments]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {comments.map(({
+        id, content, createdAt, score,
+        user: { userName, imagePng },
+      }) => (
+        <Comment
+          key={`comment-${id}`}
+          name={userName}
+          img={imagePng}
+          date={createdAt}
+          content={content}
+          rate={score}
+        />
+      ))}
     </div>
   );
 }

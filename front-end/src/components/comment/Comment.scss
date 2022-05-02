@@ -1,0 +1,16 @@
+@use '../../scss/colors' as *;
+
+.comment {
+  padding: 1rem;
+  border-radius: 7px;
+  background-color: $white;
+}
+
+.comment-content {
+  text-align: left;
+}
+
+.comment-interactions {
+  display: flex;
+  justify-content: space-between;
+}
