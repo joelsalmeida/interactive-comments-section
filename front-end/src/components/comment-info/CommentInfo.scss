@@ -1,0 +1,16 @@
+@use '../../scss/colors' as *;
+
+.comment-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__img {
+    width: 32px;
+  }
+
+  &__name {
+    color: $dark-blue;
+    font-weight: 700;
+  }
+}
