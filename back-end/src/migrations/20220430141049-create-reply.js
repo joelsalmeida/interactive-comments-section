@@ -16,7 +16,7 @@ module.exports = {
         references: { model: 'Comments', key: 'id' }
       },
       content: { type: Sequelize.STRING, allowNull: false },
-      createdAt: {field: 'created_at', type: Sequelize.DATE, allowNull: false},
+      createdAt: {field: 'created_at', type: Sequelize.DATEONLY, allowNull: false},
       score: { type: Sequelize.INTEGER, allowNull: false},
     });
   },

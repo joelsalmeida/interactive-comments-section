@@ -4,7 +4,7 @@ const comment = (sequelize, DataTypes) => {
     content: { type: DataTypes.STRING, allowNull: false },
     createdAt: {
       field: 'created_at',
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
