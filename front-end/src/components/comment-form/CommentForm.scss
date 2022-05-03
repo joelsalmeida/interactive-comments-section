@@ -1,0 +1,33 @@
+@use '../../scss/colors' as *;
+@use '../../scss/mixins' as *;
+
+.comment-form {
+  @include rounded-box($white);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  &__textarea {
+    height: 4em;
+    padding: 1em;
+    border: solid 2px $light-gray;
+    border-radius: 7px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    color: $grayish-blue;
+
+    &:focus {
+      outline: solid 2px $light-grayish-blue;
+    }
+  }
+
+  &__send-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 32px;
+  }
+}
