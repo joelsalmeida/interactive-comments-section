@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
+import CommentForm from './components/comment-form/CommentForm';
 import Comment from './components/comment/Comment';
 import getByEndpoint from './helpers/getByEndpoint';
 
 function App() {
   const [comments, setComments] = useState([]);
 
+  const updateComments = () => getByEndpoint('comment').then((data) => setComments(data));
+
   useEffect(() => {
-    getByEndpoint('comment').then((data) => setComments(data));
-  }, [comments]);
+    updateComments();
+  }, []);
 
   return (
     <div className="App">
@@ -25,6 +28,8 @@ function App() {
           rate={score}
         />
       ))}
+
+      <CommentForm update={updateComments} />
     </div>
   );
 }
