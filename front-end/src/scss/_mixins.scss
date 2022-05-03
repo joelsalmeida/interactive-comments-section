@@ -1,0 +1,5 @@
+@mixin rounded-box($color) {
+  padding: 1rem;
+  border-radius: 7px;
+  background-color: $color;
+}

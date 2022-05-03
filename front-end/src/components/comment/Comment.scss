@@ -1,9 +1,8 @@
 @use '../../scss/colors' as *;
+@use '../../scss/mixins' as *;
 
 .comment {
-  padding: 1rem;
-  border-radius: 7px;
-  background-color: $white;
+  @include rounded-box($white);
 }
 
 .comment-content {
